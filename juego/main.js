@@ -10,9 +10,9 @@ this.ball = null;
 
 self.Board.prototype = {
     get elements(){
-var elements = this.bars;
-elements.push(ball);
-return elements;
+        var elements = this.bars;
+        elements.push(ball);
+        return elements;
     }
 }
 
@@ -23,10 +23,16 @@ self.BoardView = function(canvas, board){
     this.canvas.width = board.width;
     this.canvas.heigh = board.heigh;
     this.board = board;
-    this.ctx = canvas.getcont
+    this.ctx = canvas.getContext("2d");
+    
     }
-})
+})();
 
-function main {
+window.addEventListener("load",main);
 
+function main (){
+var board = new Board (800, 800);
+console.log(board);
+var canvas = document.getElementById('canvas')
+var board_view = new BoardView (canvas, board);
 }
